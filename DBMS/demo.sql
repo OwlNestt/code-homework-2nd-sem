@@ -1,0 +1,1 @@
+-- database consistancy defination with example
