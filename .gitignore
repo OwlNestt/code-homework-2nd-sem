@@ -3,3 +3,7 @@
 
 # Ignore executable files
 *.exe
+
+# Ignore some private learning files
+
+/private/
