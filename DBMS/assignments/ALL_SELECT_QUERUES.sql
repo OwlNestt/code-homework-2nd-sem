@@ -5,7 +5,7 @@
 -- SELECT DISTINCT Job_type FROM EMPLOYEE;
 
 -- 3. Display the Employee Name concatenated by a Job separated by a comma.
--- SELECT Ename || ',' || Job_type FROM EMPLOYEE;
+-- SELECT Ename || ',' || Job_type AS name_and_Job FROM EMPLOYEE;
 
 -- 4. Display all the data from the Employee Table. Separate each Column by a comma and name the said column as THE_OUTPUT.
 -- SELECT Eno || ',' || Ename || ',' || Job_type || ',' || Manager || ',' || Hire_date || ',' || Dno || ',' || Commission || ',' || Salary AS THE_OUTPUT FROM EMPLOYEE;
