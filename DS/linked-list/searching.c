@@ -25,6 +25,7 @@ int main(){
         scanf("%d",&ch);
     }
     temp = head;
+    // Searching logic
     int num,counter=0;
     printf("Enter element want to search: ");
     scanf("%d",&num);
@@ -34,7 +35,7 @@ int main(){
             break;
         } temp = temp->next;
     }
-     counter > 0 ? printf("Element found=%d",(*temp).data) : printf("Element not found");
+     counter > 0 ? printf("Element found=%d",temp->data) : printf("Element not found");
 
     return 0;
 }
