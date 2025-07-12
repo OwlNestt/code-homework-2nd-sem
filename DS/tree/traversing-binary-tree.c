@@ -25,6 +25,22 @@ void inorderTraversal(struct Node* root) {
     }
 }
 
+void preorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorderTraversal(root->left);
+        preorderTraversal(root->right);
+    }
+}
+
+void postorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        postorderTraversal(root->left);
+        postorderTraversal(root->right);
+        printf("%d ", root->data);
+    }
+}
+
 // Function to insert a node in the binary search tree
 struct Node* insertNode(struct Node* root, int data) {
     if (root == NULL) {
@@ -40,8 +56,12 @@ struct Node* insertNode(struct Node* root, int data) {
 
 // Function to display the tree (inorder traversal)
 void display(struct Node* root) {
-    printf("Inorder Traversal: ");
+    printf("Preorder Traversal: ");
+    preorderTraversal(root);
+    printf("\nInorder Traversal: ");
     inorderTraversal(root);
+    printf("\nPostorder Traversal: ");
+    postorderTraversal(root);
     printf("\n");
 }
 
