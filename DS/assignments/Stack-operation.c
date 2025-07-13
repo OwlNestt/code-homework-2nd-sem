@@ -45,10 +45,6 @@ void push(struct Node** top, int size) {
         return;
     }
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    if (!newNode) {
-        printf("Memory allocation failed!\n");
-        return;
-    }
     printf("Enter data to push onto the stack: ");
     scanf("%d", &newNode->data);
     newNode->next = NULL;

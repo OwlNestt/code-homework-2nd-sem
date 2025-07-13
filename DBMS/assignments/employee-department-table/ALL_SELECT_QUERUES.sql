@@ -82,8 +82,7 @@ SELECT E1.Ename, E1.Dno, E1.Salary FROM EMPLOYEE E1 WHERE EXISTS (SELECT 1 FROM 
 
 
 -- 28.	Display Name and Salaries represented by asterisks, where each asterisk (*) signifies $100.
-SELECT Ename, REPEAT('*', Salary / 100) AS Salary_In_Stars FROM EMPLOYEE;
-
+SELECT Ename, REPEAT('*', (Salary / 10000)::int) AS Salary_In_Stars FROM EMPLOYEE;
 
 -- 29.	Display the Highest, Lowest, Sum and Average Salaries of all the employees.
 SELECT MAX(Salary) AS Highest_Salary, MIN(Salary) AS Lowest_Salary, SUM(Salary) AS Total_Salary, AVG(Salary) AS Average_Salary FROM EMPLOYEE;

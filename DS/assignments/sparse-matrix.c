@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure for a node in the linked list
 struct Node {
     int row;
     int col;
