@@ -73,6 +73,36 @@ SELECT Ename, (SELECT Dname FROM DEPARTMENT D WHERE D.Dno = E.Dno) AS Department
 -- 25. Display Name, Job, Department No. and Department Name for all the employees working at the Dallas location.
 SELECT E.Ename, E.Job_type, D.Dno, D.Dname FROM EMPLOYEE E JOIN DEPARTMENT D ON E.Dno = D.Dno WHERE D.Location = 'Dallas';
 
+-- 26.	Display Name and Employee no. Along with their Manger’s Name and the Manager’s employee no; along with the Employees Name who do not have a Manager.
+SELECT  E.Ename AS Employee_Name, E.Eno AS Employee_No, M.Ename AS Manager_Name, M.Eno AS Manager_No FROM  EMPLOYEE E LEFT JOIN EMPLOYEE M ON E Manager = M.Eno;
+
+
+-- 27.	Display Name, Department No. And Salary of any employee whose department no. and salary matches both the department no. And the salary of any employee who earns a commission.
+SELECT E1.Ename, E1.Dno, E1.Salary FROM EMPLOYEE E1 WHERE EXISTS (SELECT 1 FROM EMPLOYEE E2 WHERE E2.Commission IS NOT NULL AND E1.Dno = E2.Dno AND E1.Salary = E2.Salary);
+
+
+-- 28.	Display Name and Salaries represented by asterisks, where each asterisk (*) signifies $100.
+SELECT Ename, REPEAT('*', Salary / 100) AS Salary_In_Stars FROM EMPLOYEE;
+
+
+-- 29.	Display the Highest, Lowest, Sum and Average Salaries of all the employees.
+SELECT MAX(Salary) AS Highest_Salary, MIN(Salary) AS Lowest_Salary, SUM(Salary) AS Total_Salary, AVG(Salary) AS Average_Salary FROM EMPLOYEE;
+
+
+-- 30.	Display the number of employees performing the same Job type functions.
+SELECT Job_type, COUNT(*) AS Num_Employees FROM EMPLOYEE GROUP BY Job_type;
+
+
+-- 31.	Display the no. of managers without listing their names.
+SELECT COUNT(DISTINCT Manager) AS Num_Managers FROM EMPLOYEE WHERE Manager IS NOT NULL;
+
+
+-- 32.	Display the Department Name, Location Name, No. of Employees and the average salary for all employees in that department.
+SELECT D.Dname, D.Location, COUNT(E.Eno) AS Num_Employees, AVG(E.Salary) AS Avg_Salary FROM DEPARTMENT D JOIN EMPLOYEE E ON D.Dno = E.Dno GROUP BY D.Dname, D.Location;
+
+
+-- 33.	Display Name and Hire Date for all employees in the same dept. as Blake.
+SELECT Ename, Hire_date FROM EMPLOYEE WHERE Dno = (SELECT Dno FROM EMPLOYEE WHERE Ename = 'BLAKE');
 
 
 
