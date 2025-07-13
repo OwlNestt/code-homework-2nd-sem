@@ -15,3 +15,5 @@
 - [11. Array and Linked list implementations of Stack and perform operations such as push, pop and status.](./DS/assignments/stack-array-linkedlist.c)
 - [12. Linked list implementation of Queue and perform operations such as enqueue and dequeue.](./DS/assignments/queue-linkedlist.c)
 - [13. Linked list implementation of Circular Queue.](./DS/assignments/circular-queue-linkedlist.c)
+- [14. To implement a Binary Search Tree.](./Ds/assignments/binary-search-tree.c)
+- [15. To perform tree traversal operations.](./DS/assignments/tree-traversing.c)
